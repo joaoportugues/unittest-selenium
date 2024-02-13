@@ -1,0 +1,5 @@
+selenium==4.17.2
+html-testRunner==1.2.1
+pytest 
+pytest-html
+html-reporter
