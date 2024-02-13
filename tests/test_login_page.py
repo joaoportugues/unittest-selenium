@@ -5,7 +5,7 @@ from pages.login_page import LoginPage
 class TestLoginPage(BaseTest):
     def test_successful_login(self):
         self.driver.get("https://example.com/login")
-        login_page = LoginPage(self.driver)
+        login_page = LoginPage(self.driver, self.wait)
         login_page.enter_username("your_username")
         login_page.enter_password("your_password")
         login_page.click_login_button()

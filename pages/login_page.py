@@ -1,15 +1,18 @@
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 class LoginPage:
     username = (By.ID, "username")
     password = (By.ID, "password")
     login_button = (By.ID, "loginButton")
 
-    def __init__(self, driver):
+    def __init__(self, driver, wait):
         self.driver = driver
+        self.wait = wait
 
     def enter_username(self, username):
-        username_field = self.driver.find_element(*self.username)
+        username_field = self.wait.until(EC.presence_of_element_located(self.username))
         username_field.clear()
         username_field.send_keys(username)
 

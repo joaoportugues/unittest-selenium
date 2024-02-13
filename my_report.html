@@ -52,11 +52,11 @@
         <hr>
         <p>
             <strong>Start time:</strong>
-            <span>2024-02-13, 21:12:23</span>
+            <span>2024-02-13, 21:27:48</span>
         </p>
         <p>
             <strong>Duration:</strong>
-            <span>0:00:09.471795</span>
+            <span>0:00:22.410362</span>
         </p>
         <p>
             <strong>Status:</strong>
@@ -177,18 +177,12 @@ AssertionError: 'Home Page' not found in 'Example Domain'
                                 <pre>et2.1: Traceback (most recent call last):
   File "C:\Users\qleap\automation\unittest-selenium\tests\test_login_page.py", line 9, in test_successful_login
     login_page.enter_username("your_username")
-  File "C:\Users\qleap\automation\unittest-selenium\pages\login_page.py", line 12, in enter_username
-    username_field = self.driver.find_element(*self.username)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\qleap\AppData\Roaming\Python\Python311\site-packages\selenium\webdriver\remote\webdriver.py", line 741, in find_element
-    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\qleap\AppData\Roaming\Python\Python311\site-packages\selenium\webdriver\remote\webdriver.py", line 347, in execute
-    self.error_handler.check_response(response)
-  File "C:\Users\qleap\AppData\Roaming\Python\Python311\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"[id="username"]"}
-  (Session info: chrome=121.0.6167.161); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+  File "C:\Users\qleap\automation\unittest-selenium\pages\login_page.py", line 15, in enter_username
+    username_field = self.wait.until(EC.presence_of_element_located(self.username))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\qleap\AppData\Roaming\Python\Python311\site-packages\selenium\webdriver\support\wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
 Stacktrace:
 	GetHandleVerifier [0x00007FF7B8945E42+3538674]
 	(No symbol) [0x00007FF7B8564C02]
